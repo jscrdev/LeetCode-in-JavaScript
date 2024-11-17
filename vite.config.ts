@@ -9,7 +9,7 @@ export default defineConfig({
     minThreads: 1,
     coverage: {
       provider: 'istanbul',
-      include: ['src/main/**/*.ts'],
+      include: ['src/main/**/*.js'],
       reporter: ['text', 'lcov'],
     },
   },
