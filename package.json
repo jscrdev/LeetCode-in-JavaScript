@@ -1,0 +1,60 @@
+{
+  "name": "@javadev/leetcode-in-javascript",
+  "version": "1.0.0",
+  "description": "JavaScript-based LeetCode algorithm problem solutions, regularly updated",
+  "keywords": [
+    "algorithm",
+    "javascript",
+    "math",
+    "leetcode",
+    "algorithm-competitions",
+    "leetcode-solutions",
+    "interview-questions",
+    "dynamic-programming",
+    "algorithms-and-data-structures",
+    "leetcode-javascript"
+  ],
+  "homepage": "https://github.com/LeetCode-in-JavaScript",
+  "author": "Valentyn Kolesnikov",
+  "contributors": [
+    "Valentyn Kolesnikov"
+  ],
+  "scripts": {
+    "lint:ts": "tslint -c tslint.json 'src/**/*.js'",
+    "lint:fixts": "tslint -c tslint.json 'src/**/*.js' --fix",
+    "prettier": "prettier -c --write ./src/**/*.js",
+    "build": "rm -rf ./dist && tsc",
+    "precommit": "lint-staged",
+    "prepare": "husky install",
+    "execute": "ts-node",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeetCode-in-JavaScript/LeetCode-in-JavaScript.git"
+  },
+  "bugs:": "https://github.com/LeetCode-in-JavaScript/LeetCode-in-JavaScript/issues",
+  "main": "./src/main/js/g0001_0100/s0001_two_sum/solution.js",
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,json,md}": "prettier --write"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.34.5",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.2",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^10.9.1",
+    "vitest": "^0.34.5"
+  }
+}
