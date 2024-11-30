@@ -13,7 +13,8 @@ test('addTwoNumbers', () => {
 })
 
 test('addTwoNumbers2', () => {
-    expect(new ListNode(7).val).toEqual(7)
+    const result = addTwoNumbers(new ListNode(0), new ListNode(0))
+    expect(result.toString()).toEqual('0')
 })
 
 test('addTwoNumbers3', () => {
