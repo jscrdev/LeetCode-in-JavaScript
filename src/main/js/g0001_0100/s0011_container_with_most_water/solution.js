@@ -7,19 +7,19 @@
  * @return {number}
  */
 var maxArea = function (height) {
-    let maxArea = -1;
-    let left = 0;
-    let right = height.length - 1;
+    let maxArea = -1
+    let left = 0
+    let right = height.length - 1
     while (left < right) {
         if (height[left] < height[right]) {
-            maxArea = Math.max(maxArea, height[left] * (right - left));
-            left++;
+            maxArea = Math.max(maxArea, height[left] * (right - left))
+            left++
         } else {
-            maxArea = Math.max(maxArea, height[right] * (right - left));
-            right--;
+            maxArea = Math.max(maxArea, height[right] * (right - left))
+            right--
         }
     }
-    return maxArea;
-};
+    return maxArea
+}
 
 export { maxArea }

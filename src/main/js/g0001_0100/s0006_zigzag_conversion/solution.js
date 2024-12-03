@@ -5,34 +5,34 @@
  * @param {number} numRows
  * @return {string}
  */
-var convert = function(s, numRows) {
-    const sLen = s.length;
+var convert = function (s, numRows) {
+    const sLen = s.length
     if (numRows === 1) {
-        return s;
+        return s
     }
-    const maxDist = numRows * 2 - 2;
-    let result = "";
+    const maxDist = numRows * 2 - 2
+    let result = ''
 
     for (let i = 0; i < numRows; i++) {
-        let index = i;
+        let index = i
         if (i === 0 || i === numRows - 1) {
             while (index < sLen) {
-                result += s[index];
-                index += maxDist;
+                result += s[index]
+                index += maxDist
             }
         } else {
             while (index < sLen) {
-                result += s[index];
-                index += maxDist - i * 2;
+                result += s[index]
+                index += maxDist - i * 2
                 if (index >= sLen) {
-                    break;
+                    break
                 }
-                result += s[index];
-                index += i * 2;
+                result += s[index]
+                index += i * 2
             }
         }
     }
-    return result;
+    return result
 }
 
 export { convert }

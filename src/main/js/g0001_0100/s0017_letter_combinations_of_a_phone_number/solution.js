@@ -8,33 +8,33 @@
  */
 var letterCombinations = function (digits) {
     if (digits.length === 0) {
-        return [];
+        return []
     }
 
-    const letters = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
-    const result = [];
-    const current = [];
+    const letters = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+    const result = []
+    const current = []
 
     function findCombinations(index) {
         if (current.length === digits.length) {
-            result.push(current.join(""));
-            return;
+            result.push(current.join(''))
+            return
         }
 
         for (let i = index; i < digits.length; i++) {
-            const digit = parseInt(digits[i]);
-            const letterGroup = letters[digit];
+            const digit = parseInt(digits[i])
+            const letterGroup = letters[digit]
 
             for (const char of letterGroup) {
-                current.push(char);
-                findCombinations(i + 1);
-                current.pop();
+                current.push(char)
+                findCombinations(i + 1)
+                current.pop()
             }
         }
     }
 
-    findCombinations(0);
-    return result;
-};
+    findCombinations(0)
+    return result
+}
 
 export { letterCombinations }
