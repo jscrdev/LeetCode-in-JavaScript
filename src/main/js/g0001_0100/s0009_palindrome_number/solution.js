@@ -6,18 +6,18 @@
  */
 var isPalindrome = function (x) {
     if (x < 0) {
-        return false;
+        return false
     }
 
-    let rev = 0;
-    let localX = x;
+    let rev = 0
+    let localX = x
 
     while (localX > 0) {
-        rev = rev * 10 + (localX % 10);
-        localX = Math.floor(localX / 10);
+        rev = rev * 10 + (localX % 10)
+        localX = Math.floor(localX / 10)
     }
 
-    return rev === x;
-};
+    return rev === x
+}
 
 export { isPalindrome }

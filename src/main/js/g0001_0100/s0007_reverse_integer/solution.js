@@ -6,7 +6,7 @@
  * @return {number}
  */
 var reverse = function (x) {
-    let r = x;
+    let r = x
     if (r < 0) {
         r = r.toString().split('')
         let a = r.shift()
@@ -14,11 +14,11 @@ var reverse = function (x) {
         r.unshift('-')
 
         if (Number(r.join('')) > -2147483647) {
-            return Number(r.join(''));
+            return Number(r.join(''))
         }
     }
     let reverseN = Number(r.toString().split('').reverse().join(''))
     return reverseN < 2147483647 ? reverseN : 0
-};
+}
 
 export { reverse }

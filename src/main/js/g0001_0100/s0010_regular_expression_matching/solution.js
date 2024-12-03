@@ -7,31 +7,31 @@
  * @return {boolean}
  */
 var isMatch = function (s, p) {
-    const cache = Array.from({ length: s.length + 1 }, () => Array(p.length + 1).fill(null));
+    const cache = Array.from({ length: s.length + 1 }, () => Array(p.length + 1).fill(null))
 
     function helper(i, j) {
         if (j === p.length) {
-            return i === s.length;
+            return i === s.length
         }
 
         if (cache[i][j] !== null) {
-            return cache[i][j];
+            return cache[i][j]
         }
 
-        const firstMatch = i < s.length && (s[i] === p[j] || p[j] === '.');
+        const firstMatch = i < s.length && (s[i] === p[j] || p[j] === '.')
 
-        let result;
+        let result
         if (j + 1 < p.length && p[j + 1] === '*') {
-            result = (firstMatch && helper(i + 1, j)) || helper(i, j + 2);
+            result = (firstMatch && helper(i + 1, j)) || helper(i, j + 2)
         } else {
-            result = firstMatch && helper(i + 1, j + 1);
+            result = firstMatch && helper(i + 1, j + 1)
         }
 
-        cache[i][j] = result;
-        return result;
+        cache[i][j] = result
+        return result
     }
 
-    return helper(0, 0);
-};
+    return helper(0, 0)
+}
 
 export { isMatch }
