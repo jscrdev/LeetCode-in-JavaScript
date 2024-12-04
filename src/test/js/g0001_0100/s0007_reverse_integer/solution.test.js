@@ -13,3 +13,11 @@ test('reverse2', () => {
 test('reverse3', () => {
     expect(reverse(120)).toEqual(21)
 })
+
+test('reverse4', () => {
+    expect(reverse(1534236469)).toEqual(0)
+})
+
+test('reverse5', () => {
+    expect(reverse(-2147483648)).toEqual(0)
+})
