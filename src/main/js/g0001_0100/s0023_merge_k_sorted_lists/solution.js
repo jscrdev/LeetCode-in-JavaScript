@@ -48,15 +48,12 @@ const mergeTwoLists = function(left, right) {
     }
     let current = res;
     while (left !== null || right !== null) {
-        if (left === null) {
-            current.next = right
-            right = right.next
-        } else if (right === null || left.val <= right.val) {
-            current.next = left
-            left = left.next
+        if (left.val <= right.val) {
+            current.next = left;
+            left = left.next;
         } else {
-            current.next = right
-            right = right.next
+            current.next = right;
+            right = right.next;
         }
         current = current.next
     }
