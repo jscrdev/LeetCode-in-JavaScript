@@ -8,8 +8,7 @@
  */
 var isValid = function (s) {
     const stack = []
-    for (let i = 0; i < s.length; i++) {
-        const c = s[i]
+    for (let c of s) {
         if (c === '(' || c === '[' || c === '{') {
             stack.push(c)
         } else if (c === ')' && stack.length > 0 && stack[stack.length - 1] === '(') {
@@ -22,7 +21,6 @@ var isValid = function (s) {
             return false
         }
     }
-
     return stack.length === 0
 }
 

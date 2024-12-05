@@ -10,14 +10,12 @@ var threeSum = function (nums) {
     nums.sort((a, b) => a - b)
     const len = nums.length
     const result = []
-
-    for (let i = 0; i < len - 2; i++) {
+    let i = 0;
+    while (i < len - 2) {
         let l = i + 1
         let r = len - 1
-
         while (r > l) {
             const sum = nums[i] + nums[l] + nums[r]
-
             if (sum < 0) {
                 l++
             } else if (sum > 0) {
@@ -37,12 +35,11 @@ var threeSum = function (nums) {
                 r--
             }
         }
-
         while (i < len - 1 && nums[i + 1] === nums[i]) {
             i++
         }
+        i++
     }
-
     return result
 }
 

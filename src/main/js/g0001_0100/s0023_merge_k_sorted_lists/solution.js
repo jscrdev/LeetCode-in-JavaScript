@@ -38,7 +38,6 @@ const mergeTwoLists = function(left, right) {
     if (right === null) {
         return left
     }
-
     let res;
     if (left.val <= right.val) {
         res = left
@@ -47,27 +46,18 @@ const mergeTwoLists = function(left, right) {
         res = right
         right = right.next
     }
-
     let current = res;
-    while (left !== null || right !== null) {
-        if (left === null) {
-            current.next = right
-            right = right.next
-        } else if (right === null) {
-            current.next = left
-            left = left.next
+    while (left !== null && right !== null) {
+        if (left.val <= right.val) {
+            current.next = left;
+            left = left.next;
         } else {
-            if (left.val <= right.val) {
-                current.next = left
-                left = left.next
-            } else {
-                current.next = right
-                right = right.next
-            }
+            current.next = right;
+            right = right.next;
         }
-        current = current.next
+        current = current.next;
     }
-
+    current.next = left !== null ? left : right;
     return res
 };
 
