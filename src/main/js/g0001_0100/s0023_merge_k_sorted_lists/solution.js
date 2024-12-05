@@ -56,14 +56,12 @@ const mergeTwoLists = function(left, right) {
         } else if (right === null) {
             current.next = left
             left = left.next
+        } else if (left.val <= right.val) {
+            current.next = left
+            left = left.next
         } else {
-            if (left.val <= right.val) {
-                current.next = left
-                left = left.next
-            } else {
-                current.next = right
-                right = right.next
-            }
+            current.next = right
+            right = right.next
         }
         current = current.next
     }
