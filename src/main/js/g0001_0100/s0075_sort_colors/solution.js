@@ -11,10 +11,10 @@ var sortColors = function(nums) {
     let ones = 0
 
     // Count 0s and place them at the start
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === 0) {
+    for (let num of nums) {
+        if (num === 0) {
             nums[zeroes++] = 0
-        } else if (nums[i] === 1) {
+        } else if (num === 1) {
             ones++
         }
     }
