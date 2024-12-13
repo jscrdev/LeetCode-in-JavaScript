@@ -5,7 +5,7 @@ import { expect, test } from 'vitest'
 test('solveNQueens', () => {
     expect(solveNQueens(4)).toEqual([
         ['..Q.', 'Q...', '...Q', '.Q..'],
-        ['.Q..', '...Q', 'Q...', '..Q.']
+        ['.Q..', '...Q', 'Q...', '..Q.'],
     ])
 })
 

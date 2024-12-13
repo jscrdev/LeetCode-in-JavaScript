@@ -40,7 +40,7 @@ var minWindow = function(s, t) {
         }
     }
 
-    return d === Number.MAX_VALUE ? "" : s.substring(head, head + d)
+    return d === Number.MAX_VALUE ? '' : s.substring(head, head + d)
 };
 
 export { minWindow }

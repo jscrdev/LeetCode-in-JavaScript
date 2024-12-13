@@ -9,3 +9,11 @@ test('canJump', () => {
 test('canJump2', () => {
     expect(canJump([3, 2, 1, 0, 4])).toEqual(false)
 })
+
+test('canJump3', () => {
+    expect(canJump([3])).toEqual(true)
+})
+
+test('canJump4', () => {
+    expect(canJump([0, 3, 1, 1, 4])).toEqual(false)
+})
