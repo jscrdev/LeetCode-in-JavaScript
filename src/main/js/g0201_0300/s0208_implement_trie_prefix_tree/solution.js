@@ -1,27 +1,25 @@
-
 // #Medium #Top_100_Liked_Questions #Top_Interview_Questions #String #Hash_Table #Design #Trie
 // #Level_2_Day_16_Design #Udemy_Trie_and_Heap
 // #Big_O_Time_O(word.length())_or_O(prefix.length())_Space_O(N)
 // #2024_12_17_Time_39_ms_(93.97%)_Space_66.4_MB_(88.79%)
 
 var Trie = function() {
-    this.root = {} // Initialize root node as an empty object
-}
+    this.root = {};
+};
 
 /** 
  * @param {string} word
  * @return {void}
  */
 Trie.prototype.insert = function(word) {
-    let node = this.root
-    for (let i = 0; i < word.length; i++) {
-        const char = word[i]
+    let node = this.root;
+    for (const char of word) {
         if (!node[char]) {
-            node[char] = {} // Create a new node if it doesn't exist
+            node[char] = {};
         }
-        node = node[char] // Move to the next node
+        node = node[char];
     }
-    node.isWord = true // Mark the node as a word endpoint
+    node.isWord = true;
 };
 
 /** 
@@ -29,15 +27,14 @@ Trie.prototype.insert = function(word) {
  * @return {boolean}
  */
 Trie.prototype.search = function(word) {
-    let node = this.root
-    for (let i = 0; i < word.length; i++) {
-        const char = word[i]
+    let node = this.root;
+    for (const char of word) {
         if (!node[char]) {
-            return false // Word doesn't exist
+            return false;
         }
-        node = node[char] // Move to the next node
+        node = node[char];
     }
-    return node.isWord === true // Return true if it's a complete word
+    return node.isWord === true;
 };
 
 /** 
@@ -45,15 +42,14 @@ Trie.prototype.search = function(word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function(prefix) {
-    let node = this.root
-    for (let i = 0; i < prefix.length; i++) {
-        const char = prefix[i]
+    let node = this.root;
+    for (const char of prefix) {
         if (!node[char]) {
-            return false // Prefix doesn't exist
+            return false;
         }
-        node = node[char] // Move to the next node
+        node = node[char];
     }
-    return true // Return true if prefix exists
+    return true;
 };
 
 /** 
